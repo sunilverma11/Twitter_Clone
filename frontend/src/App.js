@@ -1,15 +1,16 @@
 import "./App.css";
-import Landing from "./components/Landing/Landing";
+import { Home } from "./pages/home/Home";
+// import Landing from "./components/Landing/Landing";
 
 function App() {
   return (
     <div className="App">
       {/* START- LOGIN*/}
-      <Landing />
+      {/* <Landing /> */}
       {/* END - LOGIN SECTION */}
 
       {/* START-HOME */}
-      
+        <Home/>
       {/* END-HOME */}
 
       
