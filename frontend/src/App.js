@@ -7,6 +7,12 @@ function App() {
       {/* START- LOGIN*/}
       <Landing />
       {/* END - LOGIN SECTION */}
+
+      {/* START-HOME */}
+      
+      {/* END-HOME */}
+
+      
     </div>
   );
 }
