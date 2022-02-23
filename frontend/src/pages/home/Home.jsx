@@ -1,7 +1,8 @@
 import Feed from "../../components/Home/Feed/Feed"
 import Sidebar from "../../components/Home/Sidebar/Sidebar"
 import Widgets from "../../components/Home/Widgets/Widgets"
-import { Temp } from "../../components/Home/Profile/temp"
+import { Profile } from "../../components/Home/Profile/Profile"
+
 import "./Home.css"
 
 export const Home = ()=>{
@@ -13,7 +14,7 @@ export const Home = ()=>{
 
             {/* feed */}
             {/* <Feed/> */}
-            <Temp/>
+          <Profile/>
             {/* widgets */}
             <Widgets/>
 
