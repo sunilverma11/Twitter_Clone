@@ -1,4 +1,32 @@
 .sidebar{
-    border: 1px solid grey;
-    flex: 0.22;
+    border-right: 1px solid  var(--twitter-background);
+    flex: 0.21;
+    /* width: 21%; */
+    padding-left: 1.5vw;
+    color: var(--twitter-text-color);
+}
+
+.sidebar>ul>li{
+    list-style-type: none;
+    padding: 13px;
+}
+
+.sidebar>ul{
+    
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar>ul>li:hover{
+    /* background-color: rgb(212, 212, 212); */
+    background-color: var(--twitter-background);
+    border-radius: 30px;
+    transition: 150ms ease-out;
+}
+
+.sidebar>.MuiSvgIcon-root{
+    font-size: 33px;
+    padding: 1vw;
+    color: var( --twitter-color);
 }

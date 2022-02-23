@@ -9,18 +9,30 @@ import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Sidebar() {
   return (
     <div className='sidebar'>
-        <SidebarOption active text="Home" Icon={HomeIcon}/>
-        <SidebarOption text="Explore" Icon={TagRoundedIcon}/>
-        <SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/>
-        <SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/>
-        <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/>
-        <SidebarOption text="Lists" Icon={ArticleOutlinedIcon}/>
-        <SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/>
-        <SidebarOption text="More" Icon={PendingOutlinedIcon}/>
+        <TwitterIcon/>
+        <ul>
+            <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
+            <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
+            <li><SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/></li>
+            <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
+            <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
+            <li><SidebarOption text="Lists" Icon={ArticleOutlinedIcon}/></li>
+            <li><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
+            <li><SidebarOption text="More" Icon={PendingOutlinedIcon}/></li>
+        </ul>
+        
+        
+        
+        
+       
+        
+        
+        
     </div>
   )
 }

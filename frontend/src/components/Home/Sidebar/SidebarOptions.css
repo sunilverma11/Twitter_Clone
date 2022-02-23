@@ -3,20 +3,18 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 22px;
-    border: 1px solid red;
+    font-size: 20px;
+    /* border: 1px solid red; */
     margin: 0;
     padding: 0  ;
 }
 
 
-.sidebarOption:hover{
-    background-color: rgb(212, 212, 212);
-    border-radius: 30px;
-    transition: 150ms ease-out;
-}
+
 .sidebarOption> .MuiSvgIcon-root{
-    padding: 13px;
+    padding-right: 1vw;
+    font-size: 27px;
+
 }
 
 .sidebarOption--active{
