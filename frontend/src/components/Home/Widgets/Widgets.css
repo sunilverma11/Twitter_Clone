@@ -1,4 +1,33 @@
 .widgets{
-    flex: 0.32;
-    border: 1px solid grey;
+    /* flex: 0.32; */
+    flex-grow: 0.32;
+    /* width: 32%; */
+    border-right: 1px solid grey;
+
+}
+.widgetWrapp{
+    border: 1px solid red;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.searchTwitter{
+    display: flex;
+    border: 1px solid red;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50px;
+}
+.searchTwitter>i{
+    font-size: 23px;
+}
+.searchTwitter>input{
+    font-size: 23px;
+}
+
+@media screen and (max-width: 1000px){
+    .widgets{
+        display: none;
+    }
 }

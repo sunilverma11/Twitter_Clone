@@ -1,55 +1,25 @@
 import React from 'react'
 import "./Feed.css"
-
+import Post from './Post'
+import TweetBox from './TweetBox'
 function Feed() {
   return (
     <div className='feed'>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
-        <div>feed</div>
+
+        {/* Header */}
+        <div className='feed_header'>
+            <span>Home</span>
+        </div>
+
+        {/* tweet box */}
+        <TweetBox/>
+
+        {/* Posts  */}
+        <Post/>
+        <Post/>
+        <Post/>
     </div>
+
   )
 }
 
