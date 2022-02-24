@@ -16,15 +16,17 @@ export const Signin = ()=>{
 
        if (email && password){
         signInWithEmailAndPassword(auth,email,password).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user.uid)
+            sessionStorage.setItem('AuthToken',res.user);
         }).catch((err)=>{
             console.log(err.message);
             alert('Wrong user Credentials');
         })
+         
        }
        const user = sessionStorage.getItem('AuthToken');
        if (user){
-           navigate('/');
+        //    navigate('/');
+           console.log(user);
        }
     }
     return (

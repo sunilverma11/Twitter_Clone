@@ -1,6 +1,6 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { FcGoogle } from 'react-icons/fc';
-import { app } from "../firebase/firebase.config";
+import { app } from "../firebase/firebaseconfig";
 import { GoogleAuthProvider,FacebookAuthProvider,getAuth,signInWithPopup } from "firebase/auth"
 import { useNavigate } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export const ExternalAuth = ({text})=>{
     }
     const facebookSignup = async()=>{
        await signInWithPopup(auth,facebookProvider).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user.uid);
+            sessionStorage.setItem('AuthToken',res.user);
         })
         const user = sessionStorage.getItem('AuthToken');
         console.log(user);
