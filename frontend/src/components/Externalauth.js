@@ -12,7 +12,7 @@ export const ExternalAuth = ({text})=>{
 
     const googleSignup = async()=>{
         await signInWithPopup(auth,googleProvider).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user.uid);
+            sessionStorage.setItem('AuthToken',res);
         })
         const user = sessionStorage.getItem('AuthToken');
         console.log(user);
@@ -24,7 +24,8 @@ export const ExternalAuth = ({text})=>{
     }
     const facebookSignup = async()=>{
        await signInWithPopup(auth,facebookProvider).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user);
+            sessionStorage.setItem('AuthToken',res);
+            console.log(res);
         })
         const user = sessionStorage.getItem('AuthToken');
         console.log(user);

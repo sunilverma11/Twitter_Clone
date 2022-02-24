@@ -12,27 +12,31 @@ export const ExternalAuth = ({text})=>{
 
     const googleSignup = async()=>{
         await signInWithPopup(auth,googleProvider).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user.uid);
+            // sessionStorage.setItem('AuthToken',res.user.uid);
+            console.log(res.user);
+        }).catch((err)=>{
+            console.log("wrong credentials");
         })
-        const user = sessionStorage.getItem('AuthToken');
-        console.log(user);
-        if (user){
-            navigate('/');
-         }else {
-             alert('user Credentials is wrong');
-         }
+        // const user = sessionStorage.getItem('AuthToken');
+        // console.log(user);
+        // if (user){
+        //     navigate('/');
+        //  }else {
+        //      alert('user Credentials is wrong');
+        //  }
     }
     const facebookSignup = async()=>{
        await signInWithPopup(auth,facebookProvider).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user.uid);
+            // sessionStorage.setItem('AuthToken',res.user.uid);
+            console.log(res.user.uid);
         })
-        const user = sessionStorage.getItem('AuthToken');
-        console.log(user);
-        if (user){
-            navigate('/');
-         }else {
-             alert('user Credentials is wrong');
-         }
+        // const user = sessionStorage.getItem('AuthToken');
+        // console.log(user);
+        // if (user){
+        //     navigate('/');
+        //  }else {
+        //      alert('user Credentials is wrong');
+        //  }
     }
     return (
         <>

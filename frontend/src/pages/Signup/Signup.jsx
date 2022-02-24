@@ -8,7 +8,8 @@ import { SignupForm } from "../../components/auth/ManualSignup";
 export const Signup = ()=>{
 
     const [popup,setPopup] = useState(false);
-
+    const user = sessionStorage.getItem("AuthToken");
+    console.log("user:",user)
     const navigate = useNavigate();
     return <div className="signup-container">
         <div className="poster">
