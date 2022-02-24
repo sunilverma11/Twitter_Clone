@@ -10,6 +10,7 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {Link} from "react-router-dom"
 
 function Sidebar() {
   return (
@@ -17,13 +18,15 @@ function Sidebar() {
         <TwitterIcon style={{marginRight: '0.3rem'}}/>
         <ul>
             <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
-            <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
+           <Link to="/explore"><li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li></Link> 
             <li><SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/></li>
             <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
             <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
             <li><SidebarOption text="Lists" Icon={ArticleOutlinedIcon}/></li>
             <li><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
             <li><SidebarOption text="More" Icon={PendingOutlinedIcon}/></li>
+
+            <li id='sideTweetBtn'>Tweet</li>
         </ul>
         
         

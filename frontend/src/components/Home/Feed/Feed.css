@@ -1,6 +1,6 @@
 .feed{
-    /* flex: 0.47; */
-    flex-grow: 0.47;
+    flex: 0.47;
+    /* flex-grow: 0.47; */
 
     /* border: 1px solid grey; */
     /* min-width: fit-content; */

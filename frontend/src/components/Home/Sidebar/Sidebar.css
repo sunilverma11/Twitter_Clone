@@ -1,7 +1,7 @@
 .sidebar{
     border-right: 1px solid  var(--twitter-background);
-    /* flex: 0.21; */
-    flex-grow: 0.21;
+    flex: 0.21;
+    /* flex-grow: 0.21; */
     /* width: 21%; */
     /* padding-left: 1.5vw; */
     padding: 1.5rem;
@@ -33,6 +33,20 @@
     font-size: 33px;
     padding: 1vw;
     color: var( --twitter-color);
+}
+#sideTweetBtn{
+    background-color: var(--twitter-color);
+    color: white;
+    text-align: center;
+    border-radius: 25px;
+    width: 75%;
+    font-weight: bold;
+    font-size: 19px;
+    cursor: pointer;
+}
+#sideTweetBtn:hover{
+    background-color: var(--twitter-dark-color);
+    
 }
 
 @media screen and (max-width: 1000px){
