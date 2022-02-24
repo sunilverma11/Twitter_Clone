@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { Twitter } from '@material-ui/icons';
 import { MdOutlineClear } from "react-icons/md";
 import { getAuth,signInWithEmailAndPassword } from "firebase/auth"
-import { ExternalAuth } from "../../components/auth/ExternalAuth";
-import "./login.css"
+import { ExternalAuth } from "../components/Externalauth";
+import "./styles/signin.css"
 export const Signin = ()=>{
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
@@ -16,17 +16,15 @@ export const Signin = ()=>{
 
        if (email && password){
         signInWithEmailAndPassword(auth,email,password).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user);
+            sessionStorage.setItem('AuthToken',res.user.uid)
         }).catch((err)=>{
             console.log(err.message);
             alert('Wrong user Credentials');
         })
-         
        }
        const user = sessionStorage.getItem('AuthToken');
        if (user){
-        //    navigate('/');
-           console.log(user);
+           navigate('/');
        }
     }
     return (
