@@ -1,9 +1,8 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom"
-import { Home } from './pages/Index';
-import { Signin } from './pages/Signin';
-import { Signup } from './pages/Signup';
-import { SignupForm } from './components/ManualSignup';
+import { Home } from './pages/home/Home';
+import { Signin } from './pages/login/Login';
+import { Signup } from './pages/Signup/Signup';
 
 function App() {
   return (
