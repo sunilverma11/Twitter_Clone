@@ -6,9 +6,9 @@ import "./Home.css"
 
 export const Home = ()=>{
     const navigate = useNavigate();
-    const user = sessionStorage.getItem('AuthToken');
+    const user = JSON.parse(sessionStorage.getItem('AuthToken'));
     if (!user){
-        navigate('/signup');
+        navigate('/signup')
     }
     return (
         <div className="home">

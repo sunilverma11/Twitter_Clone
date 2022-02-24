@@ -16,10 +16,10 @@ import {
   serverTimestamp,
   updateDoc,
 } from "@firebase/firestore";
-import { getDownloadURL, ref, uploadString } from "@firebase/storage";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 function TweetBox() {
-
+    const user = JSON.parse(sessionStorage.getItem('AuthToken'));
     const [input, setInput] = useState("");
     const [file,setFile] = useState(null);
     const fileref = useRef(null);
@@ -41,11 +41,15 @@ function TweetBox() {
         setLoading(true);
 
         const docRef = await addDoc(collection(database,"posts"),{
+            id: user.uid,
+            username: user.displayName,
+            userImg: user.photoURL,
             caption: input,
             timestamp: serverTimestamp(),
         })
-
+        console.log('half post')
         const imgRef = ref(storage,`posts/${docRef.id}/img`);
+        console.log('image verify');
 
         if (file){
             await uploadString(imgRef,file,"data_url").then(async()=>{
@@ -55,6 +59,7 @@ function TweetBox() {
                 })
             })
         }
+        console.log("img changes to string");
 
         setLoading(false);
         setInput("");
@@ -66,12 +71,12 @@ function TweetBox() {
         let codeArray = [];
         res.forEach((el)=> codeArray.push("0x"+ el));
         let emoji = String.fromCodePoint(...codeArray);
-        setInput((val) => val + emoji);
+        setInput(input + emoji);
     };
   return (
     <div className='tweetBox'>
         <div className='tweet_input'>
-            <Avatar src="https://imgk.timesnownews.com/story/Virat_Kohli_T20_PTI.jpg?tr=w-400,h-300,fo-auto" sx={{ width: 50, height: 50 }}/>
+            <Avatar src={user.photoURL} sx={{ width: 50, height: 50 }}/>
             <div className='input-box'>
                 <textarea placeholder="What's happening?" onChange={(e)=> setInput(e.target.value)}/>
                 {file && (

@@ -16,7 +16,7 @@ export const Signin = ()=>{
         console.log("before user");
        if (email && password){
         signInWithEmailAndPassword(auth,email,password).then((res)=>{
-            sessionStorage.setItem('AuthToken',res._tokenResponse);
+            sessionStorage.setItem('AuthToken',JSON.stringify(res._tokenResponse));
             console.log("user:",res._tokenResponse);
         }).catch((err)=>{
             console.log(err.message);
