@@ -18,7 +18,7 @@ function Sidebar() {
         <TwitterIcon style={{marginRight: '0.3rem'}}/>
         <ul>
             <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
-           <Link to="/explore"><li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li></Link> 
+            <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
             <li><SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/></li>
             <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
             <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
