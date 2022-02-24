@@ -10,7 +10,7 @@ export const Home = ()=>{
         <div className="home">
 
             {/* sidebar */}
-            <Sidebar></Sidebar>
+            <Sidebar/>
 
             {/* feed */}
             {/* <Feed/> */}

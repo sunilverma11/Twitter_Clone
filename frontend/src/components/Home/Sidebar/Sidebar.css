@@ -1,4 +1,45 @@
 .sidebar{
-    border: 1px solid grey;
-    flex: 0.21
+    border-right: 1px solid  var(--twitter-background);
+    /* flex: 0.21; */
+    flex-grow: 0.21;
+    /* width: 21%; */
+    /* padding-left: 1.5vw; */
+    padding: 1.5rem;
+    padding-top: 0.2rem;
+    padding-right: 0.5rem;
+    color: var(--twitter-text-color);
+}
+
+.sidebar>ul>li{
+    list-style-type: none;
+    padding: 13px;
+}
+
+.sidebar>ul{
+    
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar>ul>li:hover{
+    /* background-color: rgb(212, 212, 212); */
+    background-color: var(--twitter-background);
+    border-radius: 30px;
+    transition: 150ms ease-out;
+}
+
+.sidebar>.MuiSvgIcon-root{
+    font-size: 33px;
+    padding: 1vw;
+    color: var( --twitter-color);
+}
+
+@media screen and (max-width: 1000px){
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0.4rem;
+    }
 }
