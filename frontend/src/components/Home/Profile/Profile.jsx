@@ -65,6 +65,12 @@ export const Profile = () => {
       <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>
       <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
       <div>hello</div> <div>hello</div> <div>hello</div>
+      <div>hello</div>
+      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
+      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
+      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>
+      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
+      <div>hello</div> <div>hello</div> <div>hello</div>
     </div>
   );
 };

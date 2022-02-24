@@ -11,6 +11,7 @@
   overflow-x: hidden;
   border-right: 1px solid var(--twitter-background);
   max-width: 700px;
+
 }
 .profile::-webkit-scrollbar {
   display: none;
