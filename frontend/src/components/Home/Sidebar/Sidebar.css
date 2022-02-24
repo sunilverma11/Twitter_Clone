@@ -1,4 +1,5 @@
-.sidebar{
-    border: 1px solid grey;
-    flex: 0.22;
+.sidebar {
+  border: 1px solid grey;
+  flex: 0.22;
+  padding: 1rem;
 }
