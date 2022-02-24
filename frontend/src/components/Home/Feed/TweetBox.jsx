@@ -18,11 +18,11 @@ function TweetBox() {
         </div>
         <div className='tweetOptions'>
             <div className='tweetAttachment'>
-                <PhotoSizeSelectActualOutlinedIcon/>
+                <i class='bx bx-image-alt'></i>
                 <GifBoxOutlinedIcon/>
-                <AlignHorizontalLeftIcon/>
-                <SentimentSatisfiedOutlinedIcon/>
-                <CalendarTodayOutlinedIcon/>
+                <i class='bx bx-poll'></i>
+                <i class='bx bx-smile'></i>
+                <i class='bx bx-calendar'></i>
                 <LocationOnOutlinedIcon/>
             </div>
             <div className='tweetButton'>

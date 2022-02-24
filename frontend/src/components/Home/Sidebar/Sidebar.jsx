@@ -14,7 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 function Sidebar() {
   return (
     <div className='sidebar'>
-        <TwitterIcon/>
+        <TwitterIcon style={{marginRight: '0.3rem'}}/>
         <ul>
             <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
             <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>

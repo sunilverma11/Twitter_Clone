@@ -25,6 +25,7 @@
 .post_image>img{
     width: 100%;
     border-radius: 1rem;
+    object-fit: contain;
 }
 .post_actions{
     display: flex;
