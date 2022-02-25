@@ -2,6 +2,7 @@ import "./Profile.css";
 import ArrowBackSharpIcon from "@mui/icons-material/ArrowBackSharp";
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import Post from "../Feed/Post";
 
 export const Profile = () => {
   let names = "SUNIL KUMAR VERMA";
@@ -59,6 +60,12 @@ export const Profile = () => {
         <div className="media">Media</div>
         <div className="likes">Likes</div>
       </div>
+      <div>
+      <Post/>
+        <Post/>
+        <Post/>
+</div>
+
       <div>hello</div>
       <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
       <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}

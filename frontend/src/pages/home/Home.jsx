@@ -15,7 +15,7 @@ export const Home = ()=>{
             {/* feed */}
             {/* <Feed/> */}
           
-            <Profile />           
+            <Profile /> 
             
             {/* widgets */}
             <Widgets/>
