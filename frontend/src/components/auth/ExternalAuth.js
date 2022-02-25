@@ -19,7 +19,7 @@ export const ExternalAuth = ({text})=>{
         })
         const user = sessionStorage.getItem('AuthToken');
         if (user){
-            navigate('/');
+            navigate('/home');
          }else {
              alert('user Credentials is wrong');
          }
@@ -31,7 +31,7 @@ export const ExternalAuth = ({text})=>{
         })
         const user = sessionStorage.getItem('AuthToken');
         if (user){
-            navigate('/');
+            navigate('/home');
          }else {
              alert('user Credentials is wrong');
          }

@@ -15,11 +15,24 @@ import {
   doc,
   serverTimestamp,
   updateDoc,
-} from "@firebase/firestore";
+} from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 function TweetBox() {
     const user = JSON.parse(sessionStorage.getItem('AuthToken'));
+    let userid;
+    let name;
+    let userimg;
+    if (user.displayName !== ""){
+        userid = user.uid
+        name = user.displayName;
+        userimg = user.photoURL;
+    }else{
+        userid = user.localId;
+        name = user.email.split("@")[0];
+        userimg = "";
+    }
+
     const [input, setInput] = useState("");
     const [file,setFile] = useState(null);
     const fileref = useRef(null);
@@ -39,17 +52,14 @@ function TweetBox() {
     const postTweet = async()=>{
         if (loading) return;
         setLoading(true);
-
         const docRef = await addDoc(collection(database,"posts"),{
-            id: user.uid,
-            username: user.displayName,
-            userImg: user.photoURL,
+            userid: userid,
+            username: name,
+            userImg: userimg,
             caption: input,
             timestamp: serverTimestamp(),
         })
-        console.log('half post')
-        const imgRef = ref(storage,`posts/${docRef.id}/img`);
-        console.log('image verify');
+        const imgRef = ref(storage,`posts/${docRef.id}/image`);
 
         if (file){
             await uploadString(imgRef,file,"data_url").then(async()=>{
@@ -59,7 +69,6 @@ function TweetBox() {
                 })
             })
         }
-        console.log("img changes to string");
 
         setLoading(false);
         setInput("");
@@ -75,10 +84,12 @@ function TweetBox() {
     };
   return (
     <div className='tweetBox'>
-        <div className='tweet_input'>
-            <Avatar src={user.photoURL} sx={{ width: 50, height: 50 }}/>
+        {!loading && (
+            <>
+                <div className='tweet_input'>
+            <Avatar src={user.photoURL} sx={{ width: 50, height: 50, display: "flex", alignItems: "center",justifyContent: "center" }}/>
             <div className='input-box'>
-                <textarea placeholder="What's happening?" onChange={(e)=> setInput(e.target.value)}/>
+                <textarea value={input} placeholder="What's happening?" onChange={(e)=> setInput(e.target.value)}/>
                 {file && (
                     <div className='selectedfile-wrapper'>
                         <div className='clear-icon' onClick={()=>setFile(null)}>
@@ -92,15 +103,15 @@ function TweetBox() {
         <div className='tweetOptions'>
             <div className='tweetAttachment'>
                 <div onClick={()=>{fileref.current.click()}}>
-                <i class='bx bx-image-alt'></i>
+                <i className='bx bx-image-alt'></i>
                 <input type="file" onChange={addImage} ref={fileref} hidden/>
                 </div>
                 <GifBoxOutlinedIcon/>
-                <i class='bx bx-poll'></i>
+                <i className='bx bx-poll'></i>
                 <div onClick={()=> setEmojis(!emojis)}>
-                <i class='bx bx-smile'></i>
+                <i className='bx bx-smile'></i>
                 </div>
-                <i class='bx bx-calendar'></i>
+                <i className='bx bx-calendar'></i>
                 <LocationOnOutlinedIcon/>
             </div>
             <div className='tweetButton'>
@@ -117,6 +128,8 @@ function TweetBox() {
                 marginLeft: "35px",
                 zIndex: "2",
             }} theme="light"/>
+        )}
+            </>
         )}
         
     </div>

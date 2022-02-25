@@ -19,7 +19,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
         <div>
-          <TwitterIcon style={{marginRight: '0.3rem'}}/>
+          <TwitterIcon style={{marginRight: "-1rem"}}/>
           <ul>
               <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
             <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
@@ -30,7 +30,7 @@ function Sidebar() {
               <li><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
               <li><SidebarOption text="More" Icon={PendingOutlinedIcon}/></li>
 
-              <li id='sideTweetBtn'>Tweet</li>
+              <li id='sideTweetBtn'><i className='bx bx-plus'></i></li>
           </ul>
         </div>
         

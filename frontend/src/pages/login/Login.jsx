@@ -26,7 +26,7 @@ export const Signin = ()=>{
        }
        const user = sessionStorage.getItem('AuthToken');
        if (user){
-           navigate('/');
+           navigate('/home');
        }
     }
     return (
@@ -68,7 +68,7 @@ export const Signin = ()=>{
                             <button onClick={HandleSignIn}>Sign In</button>
                         </div>
                         <div>
-                            <p>Don't have an account? <span onClick={()=>{navigate('/signup')}}>Sign up</span></p>
+                            <p>Don't have an account? <span onClick={()=>{navigate('/')}}>Sign up</span></p>
                         </div>
                     </div>
                 </div>
