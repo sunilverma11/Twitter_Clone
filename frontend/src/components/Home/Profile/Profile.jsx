@@ -61,9 +61,9 @@ export  const Profile = () => {
         <div className="likes">Likes</div>
       </div>
       <div>
-        {/* <Post />
         <Post />
-        <Post /> */}
+        <Post />
+        <Post />
       </div>
     </div>
   );
