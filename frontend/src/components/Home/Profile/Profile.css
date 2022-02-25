@@ -3,7 +3,8 @@
 } */
 
 .profile {
-  flex-grow: 0.47;
+  /* flex-grow: 0.47; */
+  flex: 0.47;
 
   /* border: 1px solid grey; */
   /* min-width: fit-content; */
@@ -114,4 +115,15 @@
 .profile_post_header div:hover {
   background-color: var(--twitter-background);
   cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile {
+    flex: 0.7;
+  }
+}
+@media screen and (max-width: 768px) {
+  .profile {
+    flex: 0.8;
+  }
 }
