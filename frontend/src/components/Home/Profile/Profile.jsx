@@ -61,23 +61,10 @@ export const Profile = () => {
         <div className="likes">Likes</div>
       </div>
       <div>
-      <Post/>
-        <Post/>
-        <Post/>
-</div>
-
-      <div>hello</div>
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div>
-      <div>hello</div>
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>
-      <div>hello</div> <div>hello</div> <div>hello</div> <div>hello</div>{" "}
-      <div>hello</div> <div>hello</div> <div>hello</div>
+        <Post />
+        <Post />
+        <Post />
+      </div>
     </div>
   );
 };
