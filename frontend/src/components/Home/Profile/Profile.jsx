@@ -4,7 +4,7 @@ import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import Post from "../Feed/Post";
 
-export const Profile = () => {
+export  const Profile = () => {
   let names = "SUNIL KUMAR VERMA";
   let type = "Tweets";
   let userid = "Sunilraj_verma";
@@ -61,9 +61,9 @@ export const Profile = () => {
         <div className="likes">Likes</div>
       </div>
       <div>
+        {/* <Post />
         <Post />
-        <Post />
-        <Post />
+        <Post /> */}
       </div>
     </div>
   );
