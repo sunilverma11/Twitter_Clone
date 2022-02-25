@@ -5,21 +5,20 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { Profile } from "../../components/Home/Profile/Profile";
 
-export const Home = () => {
-  const navigate = useNavigate();
-  const user = JSON.parse(sessionStorage.getItem("AuthToken"));
-  if (!user) {
-    navigate("/signup");
-  }
-  return (
-    <div className="home">
-      {/* sidebar */}
-      <Sidebar />
+export const Home = ()=>{
+    const navigate = useNavigate();
+    const user = JSON.parse(sessionStorage.getItem('AuthToken'));
+    if (!user){
+        navigate('/')
+    }
+    return (
+        <div className="home">
 
+          <Sidebar/>
       {/* feed */}
-      <Feed/>
+      {/* <Feed/> */}
 
-      {/* <Profile /> */}
+      <Profile />
 
       {/* widgets */}
       <Widgets />

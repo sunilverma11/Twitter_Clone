@@ -21,16 +21,16 @@ function Widgets() {
     <div className='widgets'>
       <div className="widgetWrapp">
         <div className="searchTwitter">
-            <i class='bx bx-search'></i>
+            <i className='bx bx-search'></i>
             <input type="text" placeholder='Search Twitter'/>
         </div>
         <div className='widgetFeed'>
           <div className="widgetHeader">
             What's happening
           </div>
-          {widgetData.map((e)=>{
+          {widgetData.map((e,idx)=>{
             return(
-            <WidgetCard key={Date.now()} tag={e.tag} text={e.text} img={e.img}/>
+            <WidgetCard key={idx} tag={e.tag} text={e.text} img={e.img}/>
             )
           })}
           
