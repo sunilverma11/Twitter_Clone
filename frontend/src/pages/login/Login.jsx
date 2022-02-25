@@ -13,10 +13,11 @@ export const Signin = ()=>{
 
     const HandleSignIn = ()=>{
         const auth = getAuth();
-
+        console.log("before user");
        if (email && password){
         signInWithEmailAndPassword(auth,email,password).then((res)=>{
-            sessionStorage.setItem('AuthToken',res.user);
+            sessionStorage.setItem('AuthToken',res._tokenResponse);
+            console.log("user:",res._tokenResponse);
         }).catch((err)=>{
             console.log(err.message);
             alert('Wrong user Credentials');
@@ -25,8 +26,7 @@ export const Signin = ()=>{
        }
        const user = sessionStorage.getItem('AuthToken');
        if (user){
-        //    navigate('/');
-           console.log(user);
+           navigate('/');
        }
     }
     return (

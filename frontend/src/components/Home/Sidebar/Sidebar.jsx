@@ -10,15 +10,16 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 function Sidebar() {
+  const navigate = useNavigate();
   return (
     <div className='sidebar'>
         <TwitterIcon style={{marginRight: '0.3rem'}}/>
         <ul>
             <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
-            <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
+           <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
             <li><SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/></li>
             <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
             <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
@@ -29,13 +30,18 @@ function Sidebar() {
             <li id='sideTweetBtn'>Tweet</li>
         </ul>
         
-        
-        
-        
-       
-        
-        
-        
+        <div className='logout-sec' style={{
+          border: "1px solid red",
+          width: "50px",
+          height: "100px",
+        }}>
+          <div className='logout-bar'>
+            <div className='user-img'> <button onClick={()=>{
+          sessionStorage.removeItem('AuthToken');
+          navigate('/signup');
+        }}>Logout user</button></div>
+          </div>
+        </div>
     </div>
   )
 }
