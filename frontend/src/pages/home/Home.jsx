@@ -16,9 +16,9 @@ export const Home = ()=>{
 
           <Sidebar/>
       {/* feed */}
-      {/* <Feed/> */}
+      <Feed/>
 
-      <Profile />
+      {/* <Profile /> */}
 
       {/* widgets */}
       <Widgets />
