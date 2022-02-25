@@ -8,7 +8,7 @@ export const Home = ()=>{
     const navigate = useNavigate();
     const user = JSON.parse(sessionStorage.getItem('AuthToken'));
     if (!user){
-        navigate('/signup')
+        navigate('/')
     }
     return (
         <div className="home">

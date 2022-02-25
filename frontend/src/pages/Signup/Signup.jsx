@@ -2,15 +2,19 @@ import "./signup.css"
 import { Twitter } from '@material-ui/icons';
 import { ExternalAuth } from "../../components/auth/ExternalAuth";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SignupForm } from "../../components/auth/ManualSignup";
 
 export const Signup = ()=>{
-
-    const [popup,setPopup] = useState(false);
-    const user = sessionStorage.getItem("AuthToken");
-    console.log("user:",user)
+    const user = JSON.parse(sessionStorage.getItem('AuthToken'));
     const navigate = useNavigate();
+    useEffect(()=>{
+        if (user){
+            navigate('/home');
+        }
+    },[]);
+    console.log(user);
+    const [popup,setPopup] = useState(false);
     return <div className="signup-container">
         <div className="poster">
             <div className="Logo">
