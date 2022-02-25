@@ -14,10 +14,11 @@ export const Home = ()=>{
     return (
         <div className="home">
 
+          <Sidebar/>
       {/* feed */}
-      <Feed/>
+      {/* <Feed/> */}
 
-      {/* <Profile /> */}
+      <Profile />
 
       {/* widgets */}
       <Widgets />

@@ -87,7 +87,7 @@ function TweetBox() {
         {!loading && (
             <>
                 <div className='tweet_input'>
-            <Avatar src={user.photoURL} sx={{ width: 50, height: 50 }}/>
+            <Avatar src={user.photoURL} sx={{ width: 50, height: 50, display: "flex", alignItems: "center",justifyContent: "center" }}/>
             <div className='input-box'>
                 <textarea value={input} placeholder="What's happening?" onChange={(e)=> setInput(e.target.value)}/>
                 {file && (

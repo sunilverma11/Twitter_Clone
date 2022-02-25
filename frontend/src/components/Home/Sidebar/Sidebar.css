@@ -1,7 +1,7 @@
 .sidebar {
   border-right: 1px solid var(--twitter-background);
-  flex: 0.21;
-  /* flex-grow: 0.21; */
+  /* flex: 0.21; */
+  flex-grow: 0.21;
   /* width: 21%; */
   /* padding-left: 1.5vw; */
   padding: 1.5rem;
@@ -15,7 +15,11 @@
 
 .sidebar > div > ul > li {
   list-style-type: none;
-  padding: 13px;
+  display: flex;
+  padding: 0.5rem;
+  padding-left: 0;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .sidebar > div > ul {
@@ -27,7 +31,7 @@
 .sidebar > div > ul > li:hover {
   /* background-color: rgb(212, 212, 212); */
   background-color: var(--twitter-background);
-  border-radius: 30px;
+  border-radius: 40px;
   transition: 150ms ease-out;
 }
 
@@ -39,11 +43,14 @@
 #sideTweetBtn {
   background-color: var(--twitter-color);
   color: white;
-  text-align: center;
   border-radius: 25px;
-  width: 75%;
   font-weight: bold;
   font-size: 19px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 #sideTweetBtn:hover {

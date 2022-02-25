@@ -3,9 +3,45 @@ import ArrowBackSharpIcon from "@mui/icons-material/ArrowBackSharp";
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import Post from "../Feed/Post";
+import { useEffect, useState } from 'react'
+import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
+import { database } from "../../../firebase/firebaseconfig"
+import { Avatar } from "@mui/material";
 
 export  const Profile = () => {
-  let names = "SUNIL KUMAR VERMA";
+  const user = JSON.parse(sessionStorage.getItem('AuthToken'));
+
+  let userId;
+  let name;
+  if (user.displayName !== ""){
+    userId = user.uid;
+    name = user.displayName;
+  }else {
+    userId = user.localId;
+    name = user.email.split("@")[0];
+  }
+  console.log(userId);
+  const [tweets,setTweets] = useState([]);
+  useEffect(() => {
+   const unsubscribe = onSnapshot(
+     query(collection(database, "posts"), orderBy("timestamp","desc")),
+     (snapshot) => {
+      const posts = [];
+      snapshot.docs.map((el)=>{
+        if(el.data().userid == userId){
+          posts.push(el);
+        }
+      })
+       setTweets(posts);
+     }
+   );
+
+   return () => {
+     unsubscribe();
+   };
+ }, [database]);
+
+
   let type = "Tweets";
   let userid = "Sunilraj_verma";
   let join_date = "JANUARY 2022";
@@ -17,9 +53,9 @@ export  const Profile = () => {
           <ArrowBackSharpIcon />
         </span>
         <div>
-          <p className="profile_name">{names}</p>
+          <p className="profile_name">{name}</p>
           <p>
-            {50} {type}
+            {tweets.length} {type}
           </p>
         </div>
       </div>
@@ -31,15 +67,15 @@ export  const Profile = () => {
         />
       </div>
       <div className="profile_pic_div">
-        <img
+        {user.displayName == "" ? <Avatar style={{width: "100px", height: "100px" ,borderRadius: "5px", marginLeft: "-20px"}}/> : <img
           className="profile_pic"
-          src="https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg"
+          src={user.photoURL}
           alt=""
-        />
+        />}
 
         <div className="">
-          <p className="profile_pic_text">{names}</p>
-          <p>@{userid} </p>
+          <p className="profile_pic_text">{name}</p>
+          <p>@{user.email.split("@")[0]} </p>
         </div>
       </div>
       <div className="editprofile_btn">
@@ -61,9 +97,9 @@ export  const Profile = () => {
         <div className="likes">Likes</div>
       </div>
       <div>
-        <Post />
-        <Post />
-        <Post />
+        {tweets.map((el,idx)=>{
+          return <Post key={el.id} id={el.id} post={el.data()}/>
+        })}
       </div>
     </div>
   );

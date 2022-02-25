@@ -91,7 +91,7 @@ function Post(props) {
                 <div className="post_headerNames">
                     <h3 style={{fontWeight: "500"}}>{props.post.username}</h3>
                     <p> • <span>
-                        <Moment fromNow>{props.post.timestamp.toDate()}</Moment>
+                        <Moment fromNow>{props.post?.timestamp?.toDate()}</Moment>
                         </span> </p>
                 </div>
                 <div className="post_options">
@@ -136,7 +136,7 @@ function Post(props) {
                 }}>
                     {liked ? (
                         <>
-                        <i class='bx bxs-heart liked'></i> {likes.length > 0 && (
+                        <i className='bx bxs-heart liked'></i> {likes.length > 0 && (
                             <span>{likes.length}</span>
                         )}
                         </>
