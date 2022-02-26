@@ -11,10 +11,15 @@ import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import PendingOutlinedIcon from '@mui/icons-material/PendingOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {Link, useNavigate} from "react-router-dom"
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import { useRecoilState } from 'recoil';
+import { ProfileState } from '../../../recoil/modelAtom';
 
 function Sidebar() {
   const user = JSON.parse(sessionStorage.getItem('AuthToken'));
   console.log(user);
+  const [navProf,setNavProf] = useRecoilState(ProfileState);
   const navigate = useNavigate();
   return (
     <div className='sidebar'>
@@ -27,10 +32,13 @@ function Sidebar() {
               <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
               <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
               <li><SidebarOption text="Lists" Icon={ArticleOutlinedIcon}/></li>
-              <li><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
+              <li onClick={()=> setNavProf(true)}><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
               <li><SidebarOption text="More" Icon={PendingOutlinedIcon}/></li>
 
-              <li id='sideTweetBtn'><i className='bx bx-plus'></i></li>
+              <Fab color="primary" aria-label="add">
+                <p>Tweet</p>
+                <AddIcon />
+              </Fab>
           </ul>
         </div>
         

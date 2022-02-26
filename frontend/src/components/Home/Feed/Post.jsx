@@ -96,8 +96,7 @@ function Post(props) {
                 </div>
                 <div className="post_options">
                     <MoreHorizIcon/>
-                </div>
-  
+              </div>
             </div>
             {props.post.image === undefined ? <>
             <div className="post_description">
@@ -112,7 +111,7 @@ function Post(props) {
             </div>
             </>}
             <div className="post_actions">
-                <div className="comment-btn" onClick={(e)=>{
+                <div onClick={()=>setIsOpen(true)} className="comment-btn" onClick={(e)=>{
                     e.stopPropagation();
                     setPostId(props.id);
                     setIsOpen(true);

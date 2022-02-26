@@ -8,7 +8,7 @@ import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import { database } from "../../../firebase/firebaseconfig"
 import { Avatar } from "@mui/material";
 
-export  const Profile = () => {
+export  const Profile = ({trigger}) => {
   const user = JSON.parse(sessionStorage.getItem('AuthToken'));
 
   let userId;
@@ -49,7 +49,7 @@ export  const Profile = () => {
   return (
     <div className="profile">
       <div className="name_div">
-        <span className="profile_back_arrow">
+        <span className="profile_back_arrow" onClick={()=> trigger(false)}>
           <ArrowBackSharpIcon />
         </span>
         <div>
