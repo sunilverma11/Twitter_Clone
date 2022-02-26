@@ -10,3 +10,8 @@ export const PostIdState = atom({
     key: "PostIdState",
     default: "",
 });
+
+export const ProfileState = atom({
+    key: "ProfileState",
+    default: false,
+})
