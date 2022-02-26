@@ -148,7 +148,7 @@ function Post(props) {
                     )}
                 </div>
                 <div className="upload-btn">
-                    <i className='bx bx-upload'></i> <span>500</span>
+                    <i className='bx bx-upload'></i>
                 </div>
             </div>
         </div>

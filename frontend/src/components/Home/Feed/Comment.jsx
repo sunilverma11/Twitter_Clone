@@ -65,10 +65,7 @@ export const CommentBox = ()=> {
         aria-labelledby="customized-dialog-title"
         open={IsOpen}
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          
-        </BootstrapDialogTitle>
-        <DialogContent>
+        <DialogContent style={{width: "100%", height: "30vh"}}>
           <div className='comment-box'>
               <p>Comment here...</p>
           </div>
