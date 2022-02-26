@@ -34,7 +34,7 @@ export const Signin = ()=>{
             <div className="inner-wrapper">
                 <div className="logo">
                     <button onClick={()=>{
-                        navigate('/signup')
+                        navigate('/')
                     }}><MdOutlineClear style={{
                         width: "20px",
                         height: "auto",
