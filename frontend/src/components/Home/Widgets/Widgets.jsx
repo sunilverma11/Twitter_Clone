@@ -14,6 +14,16 @@ function Widgets() {
       tag:"World news",
       text:"Multiple fatalities confirmed as Ukraine says 'full-scale invasion' by Russia is underway",
       img:"https://pbs.twimg.com/semantic_core_img/1496698017776214016/RBNwIUlF?format=jpg&name=240x240"
+    },
+    {
+      tag: "Ukraine conflict",
+      text: "Ukrainian troops fight Russian advance on Kyiv",
+      img: "https://pbs.twimg.com/semantic_core_img/1496698017776214016/RBNwIUlF?format=jpg&name=240x240" 
+    },
+    {
+      tag: "Ukraine conflict",
+      text: "Indian students stranded in Ukraine seek help to come home",
+      img: "https://pbs.twimg.com/ext_tw_video_thumb/1496837621510770691/pu/img/ZtQoIVT6NYeJqYYu?format=jpg&name=240x240"
     }
   ];
   
