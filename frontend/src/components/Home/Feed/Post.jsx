@@ -96,8 +96,7 @@ function Post(props) {
                 </div>
                 <div className="post_options">
                     <MoreHorizIcon/>
-                </div>
-  
+              </div>
             </div>
             {props.post.image === undefined ? <>
             <div className="post_description">
