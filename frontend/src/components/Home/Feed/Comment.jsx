@@ -67,9 +67,9 @@ export const CommentBox = ()=> {
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           
         </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <div>
-              <h1>Comment here...</h1>
+        <DialogContent>
+          <div className='comment-box'>
+              <p>Comment here...</p>
           </div>
         </DialogContent>
       </BootstrapDialog>
