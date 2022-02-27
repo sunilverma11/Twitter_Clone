@@ -18,8 +18,8 @@ import { ProfileState } from '../../../recoil/modelAtom';
 
 function Sidebar() {
   const user = JSON.parse(sessionStorage.getItem('AuthToken'));
-  console.log(user);
   const [navProf,setNavProf] = useRecoilState(ProfileState);
+
   const navigate = useNavigate();
   return (
     <div className='sidebar'>

@@ -4,9 +4,10 @@ import Widgets from "../../components/Home/Widgets/Widgets";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { Profile } from "../../components/Home/Profile/Profile";
-import { modelState, ProfileState } from "../../recoil/modelAtom";
+import { modelState, ProfileState,TweetPageState } from "../../recoil/modelAtom";
 import { useRecoilState } from "recoil";
-import { CommentBox } from "../../components/Home/Feed/Comment";
+import { CommentModel } from "../../components/Home/Feed/Comment";
+import { PostPage } from "../../components/Home/PostPage/PostPage";
 export const Home = ()=>{
     const navigate = useNavigate();
     const user = JSON.parse(sessionStorage.getItem('AuthToken'));
@@ -15,14 +16,17 @@ export const Home = ()=>{
     }
     const [navProf,setNavProf] = useRecoilState(ProfileState);
     const [IsOpen,setIsOpen] = useRecoilState(modelState);
+    const [postpage,setPostpage] = useRecoilState(TweetPageState);
     return (
         <div className="home">
 
           <Sidebar/>
       {/* feed */}
-      {IsOpen && <CommentBox trigger={setIsOpen}/>}
       {navProf ? <Profile trigger={setNavProf}/> : <Feed/>}
+      {/* {TweetPageState ? <PostPage /> : <Feed/>} */}
 
+      {IsOpen && <CommentModel/>}
+      {/* {TweetPageState && navProf !== true (<PostPage/>)} */}
       {/* widgets */}
       <Widgets />
     </div>

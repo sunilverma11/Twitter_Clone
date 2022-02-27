@@ -15,3 +15,8 @@ export const ProfileState = atom({
     key: "ProfileState",
     default: false,
 })
+
+export const TweetPageState = atom({
+    key: "TweetPageState",
+    default: false,
+})

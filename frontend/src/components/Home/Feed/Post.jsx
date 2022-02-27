@@ -13,7 +13,7 @@ import "./Post.css"
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Moment from "react-moment";
 import { useRecoilState } from "recoil";
-import { modelState, PostIdState } from "../../../recoil/modelAtom";
+import { modelState, PostIdState, TweetPageState } from "../../../recoil/modelAtom";
 import { database } from "../../../firebase/firebaseconfig";
 
 function Post(props) {
@@ -29,6 +29,7 @@ function Post(props) {
     const [comments, setComments] = useState([]);
     const [likes, setLikes] = useState([]);
     const [liked, setLiked] = useState(false);
+    const [postpage,setPostpage] = useRecoilState(TweetPageState);
  
     useEffect(
         () =>
@@ -82,7 +83,7 @@ function Post(props) {
         }
       };
   return (
-    <div className='post'>
+    <div className='post' onClick={()=> setPostpage(true)}>
         <div className="post_avatar">
             <Avatar src={props.post.userImg} sx={{ width: 50, height: 50 }}/>
         </div>
@@ -111,7 +112,7 @@ function Post(props) {
             </div>
             </>}
             <div className="post_actions">
-                <div onClick={()=>setIsOpen(true)} className="comment-btn" onClick={(e)=>{
+                <div className="comment-btn" onClick={(e)=>{
                     e.stopPropagation();
                     setPostId(props.id);
                     setIsOpen(true);
