@@ -2,15 +2,16 @@ import "./Profile.css";
 import ArrowBackSharpIcon from "@mui/icons-material/ArrowBackSharp";
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import Post from "../Feed/Post";
+import {Post} from "../Feed/Post";
 import { useEffect, useState } from 'react'
 import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import { database } from "../../../firebase/firebaseconfig"
 import { Avatar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-export  const Profile = ({trigger}) => {
+export  const Profile = () => {
   const user = JSON.parse(sessionStorage.getItem('AuthToken'));
-
+  const navigate = useNavigate();
   let userId;
   let name;
   if (user.displayName !== ""){
@@ -49,7 +50,7 @@ export  const Profile = ({trigger}) => {
   return (
     <div className="profile">
       <div className="name_div">
-        <span className="profile_back_arrow" onClick={()=> trigger(false)}>
+        <span className="profile_back_arrow" onClick={()=> navigate('/home')}>
           <ArrowBackSharpIcon />
         </span>
         <div>
