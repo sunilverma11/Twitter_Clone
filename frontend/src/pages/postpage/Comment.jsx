@@ -9,15 +9,15 @@ import {
   } from "firebase/firestore";
 import { Avatar } from '@mui/material'
 import { useEffect, useState } from "react";
-import "./Post.css"
+import "../../components/Home/Feed/Post.css"
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Moment from "react-moment";
 import { useRecoilState } from "recoil";
-import { modelState, PostIdState, TweetPageState } from "../../../recoil/modelAtom";
-import { database } from "../../../firebase/firebaseconfig";
+import { modelState, PostIdState, TweetPageState } from "../../recoil/modelAtom";
+import { database } from "../../firebase/firebaseconfig";
 import { useNavigate } from "react-router-dom";
 
-export const Post = (props) => {
+export const Comment = (props) => {
 
     const navigate = useNavigate();
     const user = JSON.parse(sessionStorage.getItem('AuthToken'));
@@ -28,7 +28,7 @@ export const Post = (props) => {
         userId = user.localId;
     }
     const [IsOpen,setIsOpen] = useRecoilState(modelState);
-    const [postId, setPostId] = useRecoilState(PostIdState);
+    const [postId,setPostId] = useRecoilState(PostIdState);
     const [comments, setComments] = useState([]);
     const [likes, setLikes] = useState([]);
     const [liked, setLiked] = useState(false);
@@ -101,18 +101,9 @@ export const Post = (props) => {
                     <MoreHorizIcon/>
               </div>
             </div>
-            {props.post?.image === undefined ? <>
             <div className="post_description">
-                <p style={{marginBottom: "2rem"}}>{props.post?.caption}</p>
+                <p>{props.post?.comment}</p>
             </div>
-            </> : <>
-            <div className="post_description">
-                <p>{props.post?.caption}</p>
-            </div>
-            <div className="post_image">
-                <img src={props.post?.image} alt="" />
-            </div>
-            </>}
             <div className="post_actions">
                 <div className="comment-btn" onClick={(e)=>{
                     e.stopPropagation();
