@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import "./Feed.css"
-import Post from './Post'
+import {Post} from './Post'
 import TweetBox from './TweetBox'
 import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import { database } from "../../../firebase/firebaseconfig"

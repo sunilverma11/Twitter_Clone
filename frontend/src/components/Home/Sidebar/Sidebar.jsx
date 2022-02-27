@@ -18,21 +18,21 @@ import { ProfileState } from '../../../recoil/modelAtom';
 
 function Sidebar() {
   const user = JSON.parse(sessionStorage.getItem('AuthToken'));
-  console.log(user);
   const [navProf,setNavProf] = useRecoilState(ProfileState);
+
   const navigate = useNavigate();
   return (
     <div className='sidebar'>
         <div>
           <TwitterIcon style={{marginRight: "-1rem"}}/>
           <ul>
-              <li><SidebarOption active text="Home" Icon={HomeIcon}/></li>
+              <li onClick={()=> navigate("/home")}><SidebarOption active text="Home" Icon={HomeIcon}/></li>
             <li><SidebarOption text="Explore" Icon={TagRoundedIcon}/></li>
               <li><SidebarOption text="Notifications" Icon={NotificationsNoneRoundedIcon}/></li>
               <li><SidebarOption text="Messages" Icon={MailOutlineRoundedIcon}/></li>
               <li> <SidebarOption text="Bookmarks" Icon={BookmarkBorderRoundedIcon}/></li>
               <li><SidebarOption text="Lists" Icon={ArticleOutlinedIcon}/></li>
-              <li onClick={()=> setNavProf(true)}><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
+              <li onClick={()=> navigate('/profile')}><SidebarOption text="Profile" Icon={PermIdentityOutlinedIcon}/></li>
               <li><SidebarOption text="More" Icon={PendingOutlinedIcon}/></li>
 
               <Fab color="primary" aria-label="add">
