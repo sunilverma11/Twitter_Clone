@@ -1,12 +1,12 @@
 import {
-    collection,
-    deleteDoc,
-    doc,
-    onSnapshot,
-    orderBy,
-    query,
-    setDoc,
-  } from "firebase/firestore";
+  collection,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+  setDoc,
+} from "firebase/firestore";
 import { Avatar } from '@mui/material'
 import { useEffect, useState } from "react";
 import "./Post.css"
@@ -42,46 +42,26 @@ export const Post = (props) => {
             ),
             (snapshot) => setComments(snapshot.docs)
           ),
-        [database, props.id]
-      );
-    
-      useEffect(
-        () =>
-          onSnapshot(collection(database, "posts", props.id, "likes"), (snapshot) =>
-            setLikes(snapshot.docs)
-          ),
-        [database, props.id]
-      );
-    
-      useEffect(()=>{
-          if (user.displayName !== ""){
-            setLiked(
-                likes.findIndex((like) => like.id === user.uid) !== -1
-              )
-          }else {
-            setLiked(
-                likes.findIndex((like) => like.id === user.localId) !== -1
-              )
-          }
-      },[likes])
-    
-      const likePost = async () => {
+          (snapshot) => setComments(snapshot.docs)
+        ),
+      [database, props.id]
+    );
+    useEffect(
+      () =>
+        onSnapshot(collection(database, "posts", props.id, "likes"), (snapshot) =>
+          setLikes(snapshot.docs)
+        ),
+      [database, props.id]
+    );
+    useEffect(()=>{
         if (user.displayName !== ""){
-            if (liked) {
-                await deleteDoc(doc(database, "posts", props.id, "likes", user.uid));
-              } else {
-                await setDoc(doc(database, "posts", props.id, "likes", user.uid), {
-                  username: user.displayName,
-                });
-              }
+          setLiked(
+              likes.findIndex((like) => like.id === user.uid) !== -1
+            )
         }else {
-            if (liked) {
-                await deleteDoc(doc(database, "posts", props.id, "likes", user.localId));
-              } else {
-                await setDoc(doc(database, "posts", props.id, "likes", user.localId), {
-                  username: user.email.split("@")[0],
-                });
-              }
+          setLiked(
+              likes.findIndex((like) => like.id === user.localId) !== -1
+            )
         }
       };
   return (
@@ -100,6 +80,8 @@ export const Post = (props) => {
                 <div className="post_options">
                     <MoreHorizIcon/>
               </div>
+              <div className="post_options">
+                  <MoreHorizIcon/>
             </div>
             {props.post?.image === undefined ? <>
             <div className="post_description">
