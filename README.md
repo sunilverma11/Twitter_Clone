@@ -33,7 +33,7 @@ A simple Twitter Clone application created using React and firebase to mimic the
 
 ## Documentation
 
-[Blog upload soon](https://linktodocumentation)
+[Blog](https://twitter-clone-web-13-team-3.blogspot.com/2022/02/twitter-clone.html)
 
 
 ## Demo
