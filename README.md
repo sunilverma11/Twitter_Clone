@@ -8,7 +8,7 @@ A simple Twitter Clone application created using React and firebase to mimic the
 
 ## Team-members
 
-- [Sunil Kumar Verma](https://github.com/sunilverma11)
+- [Sunil Kumar Verma(me)](https://github.com/sunilverma11)
 - [Jayesh Khairnar](https://github.com/jayeshk99/)
 - [Sudhanshu Sharma](https://github.com/Sudhanshu894)
 - [Gopi Mudumal](https://github.com/gopimudumal99)
